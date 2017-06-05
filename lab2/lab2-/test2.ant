@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 10.1
+--  \   \         Application : ISE
+--  /   /         Filename : test2.ant
+-- /___/   /\     Timestamp : Mon Jun  5 21:39:00 2017
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: test2
+--Device: Xilinx
+--
+
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY test2 IS
+END test2;
+
+ARCHITECTURE testbench_arch OF test2 IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "/home/heavynest/xlinx/lab2/lab2-/test2.ano";
+
+    COMPONENT digital3
+        PORT (
+            b0 : In std_logic;
+            b1 : In std_logic;
+            b2 : In std_logic;
+            b3 : In std_logic;
+            cd : Out std_logic
+        );
+    END COMPONENT;
+
+    SIGNAL b0 : std_logic := '0';
+    SIGNAL b1 : std_logic := '1';
+    SIGNAL b2 : std_logic := '0';
+    SIGNAL b3 : std_logic := '0';
+    SIGNAL cd : std_logic := '0';
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    BEGIN
+        UUT : digital3
+        PORT MAP (
+            b0 => b0,
+            b1 => b1,
+            b2 => b2,
+            b3 => b3,
+            cd => cd
+        );
+
+        PROCESS    -- Annotation process
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_cd(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", cd, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, cd);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_cd(0);
+            ANNO_LOOP : LOOP
+                WAIT for 1 ns;
+                TX_TIME := TX_TIME + 1;
+                ANNOTATE_cd(TX_TIME);
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  51ns
+                WAIT FOR 51 ns;
+                b1 <= '0';
+                b2 <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  102ns
+                WAIT FOR 51 ns;
+                b2 <= '0';
+                -- -------------------------------------
+                WAIT FOR 898 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

@@ -1,0 +1,110 @@
+Determining compilation order of HDL files
+Analyzing VHDL file digital6.vhf
+Restoring VHDL parse-tree ieee.std_logic_1164 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/ieee/std_logic_1164.vdb
+Restoring VHDL parse-tree std.standard from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/std/standard.vdb
+Restoring VHDL parse-tree ieee.numeric_std from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/ieee/numeric_std.vdb
+Restoring VHDL parse-tree unisim.vcomponents from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Analyzing VHDL file digital5.vhf
+Analyzing VHDL file digital4.vhf
+Analyzing VHDL file digital3.vhf
+Analyzing VHDL file digital2.vhf
+Analyzing VHDL file digital1.vhf
+Analyzing VHDL file digital.vhf
+Analyzing VHDL file SSD.vhf
+Analyzing VHDL file test1.vhw
+Restoring VHDL parse-tree ieee.std_logic_textio from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/ieee/std_logic_textio.vdb
+Restoring VHDL parse-tree std.textio from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/std/textio.vdb
+Restoring VHDL parse-tree ieee.std_logic_arith from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/ieee/std_logic_arith.vdb
+Restoring VHDL parse-tree ieee.std_logic_unsigned from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/ieee/std_logic_unsigned.vdb
+Saving VHDL parse-tree work.digital6 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital6.vdb
+Saving VHDL parse-tree work.digital5 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital5.vdb
+Saving VHDL parse-tree work.digital4 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital4.vdb
+Saving VHDL parse-tree work.digital3 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital3.vdb
+Saving VHDL parse-tree work.or6_mxilinx_digital2 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/or6_mxilinx_digital2.vdb
+Saving VHDL parse-tree work.digital2 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital2.vdb
+Saving VHDL parse-tree work.digital1 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital1.vdb
+Saving VHDL parse-tree work.digital into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/digital.vdb
+Saving VHDL parse-tree work.ssd into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/ssd.vdb
+Saving VHDL parse-tree work.test1 into
+/home/heavynest/xlinx/lab2/lab2-/isim/work/test1.vdb
+Starting static elaboration
+WARNING:HDLCompiler:746 -
+   "/build/xfndry8/K.31/rtf/vhdl/src/ieee/numeric_std.vhd" Line 867. Range is
+   empty (null range)
+WARNING:HDLCompiler:746 -
+   "/build/xfndry8/K.31/rtf/vhdl/src/ieee/numeric_std.vhd" Line 868. Range is
+   empty (null range)
+Restoring VHDL parse-tree unisim.and4b4 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.and4b3 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.and4b1 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.or3 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.or4 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.and4b2 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.fmap from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.or2 from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.gnd from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Restoring VHDL parse-tree unisim.vcc from
+/opt/Xilinx/10.1/ISE/vhdl/hdp/lin64/unisim/unisim.vdbl
+Completed static elaboration
+Fuse Memory Usage: 79828 Kb
+Fuse CPU Usage: 470 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package numeric_std from library ieee
+Using precompiled package textio from library std
+Using precompiled package std_logic_textio from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling package vcomponents
+Compiling architecture and4b4_v of entity and4b4 [and4b4_default]
+Compiling architecture and4b3_v of entity and4b3 [and4b3_default]
+Compiling architecture and4b1_v of entity and4b1 [and4b1_default]
+Compiling architecture or3_v of entity or3 [or3_default]
+Compiling architecture behavioral of entity digital [digital_default]
+Compiling architecture or4_v of entity or4 [or4_default]
+Compiling architecture and4b2_v of entity and4b2 [and4b2_default]
+Compiling architecture behavioral of entity digital1 [digital1_default]
+Compiling architecture fmap_v of entity fmap [fmap_default]
+Compiling architecture behavioral of entity or6_mxilinx_digital2
+[or6_mxilinx_digital2_default]
+Compiling architecture behavioral of entity digital2 [digital2_default]
+Compiling architecture or2_v of entity or2 [or2_default]
+Compiling architecture behavioral of entity digital4 [digital4_default]
+Compiling architecture behavioral of entity digital5 [digital5_default]
+Compiling architecture behavioral of entity digital6 [digital6_default]
+Compiling architecture gnd_v of entity gnd [gnd_default]
+Compiling architecture vcc_v of entity vcc [vcc_default]
+Compiling architecture behavioral of entity digital3 [digital3_default]
+Compiling architecture behavioral of entity ssd [ssd_default]
+Compiling architecture testbench_arch of entity test1
+Compiled 47 VHDL Units
+Built simulation executable test1_isim_beh.exe
+Fuse Memory Usage: 79988 Kb
+Fuse CPU Usage: 490 ms
+GCC CPU Usage: 100 ms
